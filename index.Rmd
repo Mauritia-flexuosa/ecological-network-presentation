@@ -1,0 +1,247 @@
+---
+title: "Integrating frameworks: alternative stable states of the global pollination network structure"
+subtitle: "Introdução a redes ecológicas - Teoria e Prática"
+author: "Marcio Baldissera Cure"
+institute: "PPG Ecologia - UFSC"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: ["duke-blue", "rutgers-fonts", "uio"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      
+---
+class: top, center
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r webcam, echo=FALSE, include= TRUE}
+xaringanExtra::use_webcam()
+```
+
+```{r xaringan_themes, echo = FALSE, include=FALSE}
+	names(xaringan:::list_css())
+```
+
+```{r broadcast, echo=FALSE}
+xaringanExtra::use_broadcast()
+
+```
+
+# Sistemas dinâmicos e complexos
+
+.left[
+
+### Dinâmico
+
+- Muda com o tempo
+
+]
+
+.center[
+
+<img width="33%" src="https://m.media-amazon.com/images/I/51xgITnpd+L.jpg"/>
+<img width="55%" src="http://1.bp.blogspot.com/-ghv97fzjEvI/UoUfKNiguHI/AAAAAAAAAEw/iwRx7-lcY70/s200/johannes-kepler.jpg"/>
+
+]
+
+---
+class: top, center 
+
+# Problema da complexidade
+
+.left[
+
+### Complexo
+
+- Formado por múltiplos elementos que interagem entre si.
+]
+
+<img width="63%" src="https://evgenii.com/image/blog/2018-09-27-three-body-problem-simulator/010_coordinate_system.png"/>
+
+
+*Modelos lineares não levam em conta interações*
+
+---
+class: top, left
+
+# Solução qualitativa
+##Soluções simples para problemas complexos
+
+- Henri Poincaré: Informações a respeito do comportamento e propriedades de sistemas complexos.
+
+.center[
+<img width="63%" src="https://www.researchgate.net/profile/Rodrigo-Ricco/publication/309002188/figure/fig11/AS:670116907851787@1536779729797/Figura-6-Secao-de-Poincare-do-atrator-do-circuito-de-Roessler-afim-por-partes-para-o.jpg"/>
+]
+
+---
+class: top, left
+
+# Formas como ocorrem as mudanças
+
+.center[
+<img width="100%" src="fig/formas de mudanças.png"/>
+]
+
+--
+.center[
+<img width="45%" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10750-007-0616-7/MediaObjects/10750_2007_0616_f1.gif?as=webp"/>
+]
+
+---
+
+# Resiliência ecológica
+
+### Conceito que ajuda a descrever e entender a dinâmica de sistemas complexos.
+
+- Capacidade que os sistemas possuem de absorver impactos antes de colapsar para um estado alternativo de funcionamento
+
+- Estados alternativos
+
+- Capacidade de auto organização de um sistema (feedbacks)
+
+
+Resilience and Stability of Ecological Systems (1973):  https://www.annualreviews.org/doi/10.1146/annurev.es.04.110173.000245
+
+---
+# Representação gráfica intuitiva
+
+- Modelo Eurístico
+
+- Duas formas de mudar para um estado alternativo: 1. Impactos pontuais; 2. erosão da resiliência.
+
+.center[
+<img width="63%" src="https://www.researchgate.net/publication/327634844/figure/fig2/AS:670575961833474@1536889176130/The-theoretical-ball-and-cup-diagram-used-to-depict-ecological-resilience-as-introduced.png"/>
+]
+
+--
+.center[
+<img width= "30%" src="https://www.researchgate.net/profile/Joy-Mast/publication/255970798/figure/fig1/AS:298000120336394@1448060173639/An-example-of-the-ball-and-cup-heuristic-used-in-resilience-theory-The-top-landscape.png"/>]
+
+
+---
+# Redes ecológicas
+
+
+- Redes ecológicas são uma maneira de representar a estrurura das comunidades em termos de suas interações [Landi et al, 2018](https://doi.org/10.1007/s10144-018-0628-3).
+
+- A interação entre polinizadores e plantas é fundamental para a manutenção da biodiversidade e para a emergência de diversos serviços ecossistêmicos, inclusive os de suporte [MEA](https://www.millenniumassessment.org); [IPBES](https://ipbes.net/).
+
+- As perdas de biodiversidade e as mudanças climáticas, que já ultrapassaram os limites seguros planetários ([Rockström et al, 2009](https://www.nature.com/articles/461472a)), poderiam impactar de forma irreversível as interações que estruturam os ecossistemas.
+
+.center[
+<img width="45%" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2F461472a/MediaObjects/41586_2009_Article_BF461472a_Fig1_HTML.jpg?as=webp"/>]
+
+---
+# Pergunta:
+
+- **Existem estados alternativos em relação às métricas que definem a estrutura das redes em um gradiente climático?**
+
+## Hipótese:
+
+- **Existe uma certa estabilidade interrompida abruptamente ao cruzar um certo limiar de condições**.
+Exemplo:
+.center[
+<img width="90%" src="fig/saara.png"/>
+]
+---
+class: left
+
+# Métodos
+
+### Dados:
+- Os dados de polinização para a região tropical do Brasil foram obtidos a partir do web-of-life dataset. Os dados climáticos foram obtidos usando a função raster::getData que busca os dados do WorldClim. Mas você também pode baixar direto do site.
+
+- As métricas de rede utilizadas neste trabalho são:
+
+1. Conectância: proporção dos links potenciais que são realizados.
+2. Robustez à perda de espécies (nodes)
+3. Número de interações na rede
+4. Número de espécies (representado pelo tamanho dos pontos)
+
+
+- As variáveis ambientais são:
+
+1. Temperatura média anual;
+2. Precipitação média anual;
+3. Sazonalidade da precipitação (cv); e
+4. Sazonalidade da temperatura.
+
+---
+# Métodos
+### Estados alternativos:
+- Há bistabilidade das métricas (variáveis de estado)? (**visual**)
+
+- Estados se sobrepõe? Ou seja, podem ocorrer sob as mesmas condições? (**Visual no gráfico do PCA**). Agrupamentos por K-means.
+
+- Há algum mecanismo de feedback entre a estrutura das redes e as condições ambientais? (**revisão da literatura**)
+
+<img width="90%" src="./fig/SM_8.png"/>
+---
+# Métodos
+
+### Indicadores de resiliência
+
+<img src="./fig/indicators.png"/>
+
+---
+## Resultados
+
+### Aparentemente há multiestabilidade.
+
+.center[
+<img width="80%" src="./fig/bi_rob.png"/>
+]
+---
+## Resultados
+
+### PCA das métricas de redes em relação aos eigenvectors.
+
+.center[
+<img width="80%" src="./fig/pca_metricas.png"/>
+]
+---
+## Resultados
+
+### PCA das métricas de redes formam grupos que se sobrepõe segundo o algorítmo K-means.
+
+.center[
+<img width="75%" src="./fig/cluster_pca.png"/>
+]
+---
+## Resultados
+
+### PCA das métricas de redes em relação às variáveis ambientais.
+
+.center[
+<img width="75%" src="./fig/pc_envir.png"/>
+]
+---
+# Discussão
+
+- As redes de polinização formam 5 grupos com estruturas de redes distintas entre si.
+
+- ...
+
+- ...
+
+- ...
+
+---
+# Considerações finais
+
+- Provavelmente há estados alternativos em relação às métricas que descrevem a estrutura das redes ecológicas em relação à um gradiente de condições, mas o estudo requer testes mais formais.
+
+O próximo passo seria testar estas mesmas métricas, mas separando por:
+
+1. Cobertura do dossel; pra ver de forma simples e generalizada, mas mesmo assim bem frequente e aceita na literatura, se tipos diferentes de vegetação possuem padrões de resposta diferentes.
+
+2. Guildas; pra ver se diferentes guildas possuem padrão de resposta diferentes.
+
+
