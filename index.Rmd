@@ -223,6 +223,19 @@ class: left
 <img width="75%" src="./fig/pc_envir.png"/>
 ]
 ---
+
+.center[
+<img width="100%" src="./fig/métricas_vs_MAT.png"/>
+]
+---
+Resultados
+
+.center[
+<img width="100%" src="./fig/métricas_vs_MAP.png"/>
+]
+
+
+---
 # Discussão
 
 - As redes de polinização formam 5 grupos com estruturas de redes distintas entre si.
