@@ -34,53 +34,6 @@ xaringanExtra::use_broadcast()
 
 ```
 
-# Sistemas dinâmicos e complexos
-
-.left[
-
-### Dinâmico
-
-- Muda com o tempo
-
-]
-
-.center[
-
-<img width="33%" src="https://m.media-amazon.com/images/I/51xgITnpd+L.jpg"/>
-<img width="55%" src="http://1.bp.blogspot.com/-ghv97fzjEvI/UoUfKNiguHI/AAAAAAAAAEw/iwRx7-lcY70/s200/johannes-kepler.jpg"/>
-
-]
-
----
-class: top, center 
-
-# Problema da complexidade
-
-.left[
-
-### Complexo
-
-- Formado por múltiplos elementos que interagem entre si.
-]
-
-<img width="63%" src="https://evgenii.com/image/blog/2018-09-27-three-body-problem-simulator/010_coordinate_system.png"/>
-
-
-*Modelos lineares não levam em conta interações*
-
----
-class: top, left
-
-# Solução qualitativa
-##Soluções simples para problemas complexos
-
-- Henri Poincaré: Informações a respeito do comportamento e propriedades de sistemas complexos.
-
-.center[
-<img width="63%" src="https://www.researchgate.net/profile/Rodrigo-Ricco/publication/309002188/figure/fig11/AS:670116907851787@1536779729797/Figura-6-Secao-de-Poincare-do-atrator-do-circuito-de-Roessler-afim-por-partes-para-o.jpg"/>
-]
-
----
 
 # Resiliência ecológica
 
@@ -131,7 +84,7 @@ class: top, left
 ---
 # Pergunta:
 
-- **A resiliência das métricas que descrevem a estrutura das redes de polinização é sensível a variações nas condições climáticas?**
+- **A estabilidade das métricas que descrevem a estrutura das redes de polinização é sensível a variações nas condições climáticas?**
 
 ## Hipótese:
 
@@ -175,14 +128,14 @@ class: left
 
 - Autocorrelação temporal
 
-- Variância
+- Observação da *variância*
 
 ---
 # Resultados
 
 - As redes de polinização formam 6 grupos com estruturas de redes distintas entre si.
 
-- Há multimodalidade segundo as curvas de densidade de distribuição (flexmix)
+- Há multimodalidade segundo as curvas de densidade de distribuição 
 
 - O aumento da temperatura média anual parece ter efeito na variância das métricas
 
@@ -191,7 +144,7 @@ class: left
 ---
 ## Resultados
 
-### Aparentemente há multiestabilidade.
+### Aparentemente há multiestabilidade (flexmix).
 
 .center[
 <img width="62%" src="./density_metrics.png"/>
