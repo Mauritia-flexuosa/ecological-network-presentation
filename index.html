@@ -115,20 +115,10 @@ class: top, left
 
 
 ---
-# Representação gráfica intuitiva
 
-- Modelo Eurístico
+## Indicadores de resiliência
 
-- Duas formas de mudar para um estado alternativo: 1. Impactos pontuais; 2. erosão da resiliência.
-
-.center[
-&lt;img width="63%" src="https://www.researchgate.net/publication/327634844/figure/fig2/AS:670575961833474@1536889176130/The-theoretical-ball-and-cup-diagram-used-to-depict-ecological-resilience-as-introduced.png"/&gt;
-]
-
---
-.center[
-&lt;img width= "30%" src="https://www.researchgate.net/profile/Joy-Mast/publication/255970798/figure/fig1/AS:298000120336394@1448060173639/An-example-of-the-ball-and-cup-heuristic-used-in-resilience-theory-The-top-landscape.png"/&gt;]
-
+&lt;img src="./fig/indicators.png"/&gt;
 
 ---
 # Redes ecológicas
@@ -146,7 +136,7 @@ class: top, left
 ---
 # Pergunta:
 
-- **É possível fazer inferências acerca da resiliência das redes ecológicas em relação às métricas que definem a sua estrutura em um gradiente climático?**
+- **A resiliência das métricas que descrevem a estrutura das redes de polinização é sensível a variações nas condições climáticas?**
 
 ## Hipótese:
 
@@ -161,14 +151,14 @@ class: left
 # Métodos
 
 ### Dados: 
-- Os dados de polinização para a região tropical do Brasil foram obtidos a partir do web-of-life dataset. Os dados climáticos foram obtidos usando a função ```raster::getData``` que busca os dados do WorldClim. Mas você também pode baixar direto do site.
+- Os dados de polinização para a região tropical do Brasil foram obtidos a partir do web-of-life dataset. Os dados climáticos foram obtidos usando a função ```raster::getData``` que busca os dados do WorldClim.
 
 - As métricas de rede utilizadas neste trabalho são:
 
-1. Conectância: proporção dos links potenciais que são realizados.
+1. Conectância
 2. Robustez à perda de espécies (nodes)
 3. Número de interações na rede
-4. Número de espécies (representado pelo tamanho dos pontos)
+4. Número de espécies 
 5. Aninhamento (NODF)
 
 
@@ -192,14 +182,16 @@ class: left
 
 - Variância
 
-
-&lt;img width="80%" src="./fig/SM_8.png"/&gt;
 ---
-# Métodos
+# Resultados
 
-### Indicadores de resiliência
+- As redes de polinização formam 6 grupos com estruturas de redes distintas entre si.
 
-&lt;img src="./fig/indicators.png"/&gt;
+- Há multimodalidade segundo as curvas de densidade de distribuição (flexmix)
+
+- O aumento da temperatura média anual parece ter efeito na variância das métricas
+
+
 
 ---
 ## Resultados
@@ -254,16 +246,6 @@ class: left
 .center[
 &lt;img width="82%" src="./autocor.png"/&gt;
 ]
-
----
-# Resultados
-
-- As redes de polinização formam 6 grupos com estruturas de redes distintas entre si.
-
-- Há multimodalidade segundo as curvas de densidade de distribuição (flexmix)
-
-- O aumento da temperatura média anual parece ter efeito na variância das métricas
-
 
 
 ---
